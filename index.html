@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pomodoro Timer - Focus & Productivity</title>
+    <link rel="stylesheet" href="style_perfect.css">
+    <meta name="description" content="A modern Pomodoro timer to boost your productivity with focus sessions and breaks">
+    <meta name="keywords" content="pomodoro, timer, productivity, focus, break, study">
+</head>
+<body class="light">
+    <div class="app-wrapper">
+        <div class="container">
+            <header>
+                <div class="header-content">
+                    <h1 class="app-title">Pomodoro <br>Timer</h1>
+                    <div class="header-controls">
+                        <button id="themeToggle" class="control-btn">◑</button>
+                        <div class="session-info">
+                            <span id="sessionCount">Sessions: 0</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button id="timerTab" class="nav-btn active">⏱️</button>
+                <button id="settingsTab" class="nav-btn">⚙️</button>
+            </div>
+
+            <main>
+                <!-- Pomodoro timer display -->
+                <div id="timerView" class="view active">
+                    <div id="pomodoroDisplay" class="timer-display">
+                        <div id="pomodoroTimer" class="timer">25:00</div>
+                        
+                        <div class="timer-status">
+                            <h2 id="timerLabel">🎯 Focus Time</h2>
+                        </div>
+                        
+                        <div class="timer-controls">
+                            <button id="startStopBtn" class="primary-btn">▶</button>
+                            <button id="resetBtn" class="secondary-btn">⟲</button>
+                        </div>
+                        
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div id="progressFill" class="progress-fill"></div>
+                            </div>
+                            <span id="progressText" class="progress-text">Ready to start</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Settings view -->
+                <div id="settingsView" class="view">
+                    <div class="settings-section">
+                        <h2 class="settings-title">⚙️ Settings</h2>
+                        
+                        <form id="settingsForm" class="settings-form">
+                            <div class="settings-grid">
+                                <div class="setting-item">
+                                    <label for="focusTime">🎯 Focus Time</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="focusTime" name="focusTime" value="25" min="1" max="60">
+                                        <span class="unit">min</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="setting-item">
+                                    <label for="shortBreak">☕ Short Break</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="shortBreak" name="shortBreak" value="5" min="1" max="30">
+                                        <span class="unit">min</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="setting-item">
+                                    <label for="longBreak">🛋️ Long Break</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="longBreak" name="longBreak" value="20" min="5" max="60">
+                                        <span class="unit">min</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="setting-item">
+                                    <label for="sessionsBeforeLong">🔄 Sessions</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="sessionsBeforeLong" name="sessionsBeforeLong" value="4" min="1" max="10">
+                                        <span class="unit">cycles</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="setting-item">
+                                    <label for="appSize">📏 App Size</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="appSize" name="appSize" value="320" min="200" max="600" step="20">
+                                        <span class="unit">px</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="settings-buttons">
+                                <button type="button" id="resetSettings" class="btn-reset">↻ Reset</button>
+                                <button type="submit" class="btn-save">✓ Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script_new.js"></script>
+</body>
+</html>
